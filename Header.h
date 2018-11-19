@@ -8,7 +8,7 @@ struct Link
 };
 class List
 {
-	Link * h; // Указатель на голову
+	Link * h; // РЈРєР°Р·Р°С‚РµР»СЊ РЅР° РіРѕР»РѕРІСѓ
 public:
 	List();
 	List(const List &b);
