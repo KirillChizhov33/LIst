@@ -1,17 +1,17 @@
 #include "Header.h"
 List::List()
 {
-	h = NULL;
+	h = nullptr;
 }
 List::List(const List &b)
 {
-	if (b.h == NULL)
+	if (b.h == nullptr)
 	{
 		throw - 1;
 	}
 	Link * k;
 	k = b.h;
-	while (k != NULL)
+	while (k != nullptr)
 	{
 		this->insertf(k->value);
 		k = k->n;
@@ -19,7 +19,7 @@ List::List(const List &b)
 }
 List::~List()
 {
-	while (h != NULL)
+	while (h != nullptr)
 	{
 		deletef();
 	}
@@ -36,7 +36,7 @@ void List::show()
 {
 	Link * p;
 	p = h;
-	while (p != NULL)
+	while (p != nullptr)
 	{
 		cout << p->value << endl;
 		p = p->n;
@@ -44,7 +44,7 @@ void List::show()
 }
 void List::deletef()
 {
-	if (h = NULL)
+	if (h == nullptr)
 	{
 		return;
 	}
@@ -58,39 +58,39 @@ void List::insertl(int value)
 	Link * p;
 	p = new Link;
 	p->value = value;
-	p->n = NULL;
+	p->n = nullptr;
 	Link * t;
-	if (h == NULL)
+	if (h == nullptr)
 	{
 		h = p;
 		return;
 	}
 	t = h;
-	while (t->n != NULL)
+	while (t->n != nullptr)
 	{
 		t = t->n;
-		t->n = p;
 	}
+	t->n = p;
 }
 void List::deletel()
 {
-	if (h == NULL)
+	if (h == nullptr)
 	{
 		return;
 	}
-	if (h->n == NULL)
+	if (h->n == nullptr)
 	{
 		delete h;
 		return;
 	}
 	Link * p;
 	p = h;
-	while (p->n->n != NULL)
+	while ( p->n->n != nullptr)
 	{
 		p = p->n;
-		delete p->n;
-		p->n = NULL;
 	}
+	delete p->n;
+	p->n = nullptr;
 }
 int & List:: operator [](int index)
 {
@@ -100,12 +100,12 @@ int & List:: operator [](int index)
 	}
 	Link * t = h;
 	int i = 0;
-	while ((t != NULL) && (i < index))
+	while ((t != nullptr) && (i < index))
 	{
 		i++;
 		t = t->n;
 	}
-	if (t == NULL)
+	if (t == nullptr)
 	{
 		throw - 1;
 	}
@@ -114,7 +114,7 @@ int & List:: operator [](int index)
 }
 int List::max()
 {
-	if (h == NULL)
+	if (h == nullptr)
 	{
 		throw - 1;
 	}
@@ -123,7 +123,7 @@ int List::max()
 	int maxelem;
 	maxelem = p->value;
 	p = p->n;
-	while (p != NULL)
+	while (p != nullptr)
 	{
 		if (maxelem < p->value)
 		{
